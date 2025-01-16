@@ -19,4 +19,16 @@ document.querySelector(".gear").onclick = function (){
 
     // toggle class 
     document.querySelector(".settings-box").classList.toggle("open");
-}
+};
+
+// switch colors 
+const colorsLi = document.querySelectorAll(".colors-list li");
+
+colorsLi.forEach(li => {
+
+    li.addEventListener("click", (e) => {
+
+        document.documentElement.style.setProperty('--main-color', e.target.dataset.color);
+    });
+
+});
