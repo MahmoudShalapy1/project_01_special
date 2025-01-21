@@ -7,6 +7,9 @@ document.querySelector(".gear").onclick = function () {
     document.querySelector(".settings-box").classList.toggle("open");
 };
 
+
+
+
 // Switch colors
 const colorsLi = document.querySelectorAll(".colors-list li");
 
@@ -46,6 +49,9 @@ colorsLi.forEach((li) => {
         e.target.classList.add("active");
     });
 });
+
+
+
 
 // Random background option
 let backgroundOption = true;
@@ -122,11 +128,38 @@ function randomizeImgs() {
             // Change background image URL
             landingPage.style.backgroundImage =
                 'url("images/' + imgsArray[randomNumber] + '")';
-        }, 1000);
+        }, 5000);
     }
 }
 
 // Start randomizing images if the option is true
 if (backgroundOption) {
     randomizeImgs();
+}
+
+
+// select skills selector 
+let ourSkills = document.querySelector(".skills");
+
+window.onscroll = function() {
+
+    //skills offset top
+    let skillsOffsetTop = ourSkills.offsetTop;
+
+    //skills Outer height 
+    let skillsOuterHeight = ourSkills.offsetHeight;
+
+    //window height 
+    let windowHeight = this.innerHeight;
+
+    //window Scroll Top
+    let windowScrollTop = this.pageYOffset;
+
+    if(windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)) {
+        let allSkills = document.querySelectorAll(".skill-box .skill-progress span");
+
+        allSkills.forEach(skill => {
+            skill.style.width = skill.dataset.progress;
+        });
+    }; 
 }
