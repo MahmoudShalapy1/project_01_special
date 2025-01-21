@@ -1,9 +1,10 @@
-:root{
+/* :root{
     --main-color: #17638f;
-}
+} */
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 body{
     font-family: "Open Sans", serif;
@@ -47,6 +48,7 @@ body{
     gap: 1rem;
     margin: 0;
 }
+/* start setting box  */
 .settings-box{
     position: fixed;
     left: -200px;
@@ -70,7 +72,11 @@ body{
     cursor: pointer;
 }
 .settings-box .option-box{
+    margin: 20px;
     padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #eee;
 }
 .settings-box .option-box h4{
     margin: 0;
@@ -80,6 +86,7 @@ body{
     list-style: none;
     text-align: center;
     padding: 0;
+    margin-top: 10px;
 }
 .settings-box .option-box .colors-list li{
     width: 20px;
@@ -89,9 +96,12 @@ body{
     cursor: pointer;
     opacity: 0.5;
     display: inline-block;
+    border: 2px #eee solid;
+
 }
 .settings-box .option-box .colors-list li.active{
     opacity: 1;
+    border: 2px #fff solid;
 }
 .settings-box .option-box .colors-list li:first-child{
     background-color: #17638f;
@@ -108,8 +118,30 @@ body{
 .settings-box .option-box .colors-list li:nth-child(5){
     background-color: #565556;
 }
+.random-backgrounds{
+    padding-top: 10px;
+}
+.option-box h5{
+    font-size: 20px;
+    color: #666;
+}
+.settings-box .option-box .random-backgrounds span{
+    background-color: var(--main-color);
+    padding: 3px 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.8;
+    font-size: 12px;
+    transition: 0.3s;
+}
+.settings-box .option-box .random-backgrounds span.active{
+    opacity: 1;
+}
+/* end setting box  */
 .introduction-text{
     position: absolute;
+    width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
