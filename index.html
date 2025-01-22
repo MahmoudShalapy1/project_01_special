@@ -42,18 +42,33 @@
     <div class="landing-page">
         <div class="container">
             <div class="overlay"></div>
+            
             <div class="header">
                 <div class="logo">
                     special
                 </div>
-                <ul class="links">
+                <ul class="links d-none d-md-flex">
                     <li><a href="#about" class="active" >About</a></li>
                     <li><a href="#services">Servises</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#contacts">Contacts</a></li>
                 </ul>
+                <button class="btn d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="/images/menu.svg" alt="menu"></button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul>
+                            <li><a href="#about" class="active" >About</a></li>
+                            <li><a href="#services">Servises</a></li>
+                            <li><a href="#products">Products</a></li>
+                            <li><a href="#contacts">Contacts</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="introduction-text">
+            <div class="introduction-text ">
                 <h1>We Are <span>Creative</span> Agency</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum sequi provident! Aut excepturi architecto repellat omnis velit nobis esse.</p>
             </div>
@@ -62,11 +77,11 @@
 
     <!-- end landing page  -->
     <!-- start about us  -->
-    <div class="about-us">
+    <div class="about-us" id="about">
         <div class="container">
-            <div class="info-box">
+            <div class="info-box align-items-md-start p-2">
                 <h2>About Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, molestias.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, molestias.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Repellat, molestias.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="image-box">
                 <img src="/images/about.webp" alt="about">
@@ -127,13 +142,13 @@
                 </div>
                 <div class="box">
                     <img src="/images/gallary08.png" alt="gallary">
-                </div>
-
-                
+                </div>               
             </div>
         </div>
     </div>
     <!-- end gallary  -->
+    
     <script src="js/master.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

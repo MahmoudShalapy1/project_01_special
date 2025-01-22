@@ -30,6 +30,7 @@ body{
     z-index: 2;
     color: #fff;
     display: flex;
+    justify-content: space-between;
     padding: 10px;
 }
 .header .logo{
@@ -48,6 +49,30 @@ body{
     gap: 1rem;
     margin: 0;
 }
+.header ul a{
+    text-decoration: none;
+    transition: 0.3s;
+    color: white;
+}
+.header ul a:hover,
+.header .ul a.active{
+    color: var(--main-color);
+}
+.offcanvas{
+    background-color: #666;
+}
+.header .offcanvas ul{
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    gap: 1rem;
+    margin: 0;
+}
+
 /* start setting box  */
 .settings-box{
     position: fixed;
@@ -141,11 +166,10 @@ body{
 /* end setting box  */
 .introduction-text{
     position: absolute;
-    width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 1;
     text-align: center; 
     color: #fff;
 }
@@ -159,15 +183,6 @@ body{
     line-height: 1.6;
     font-size: 20px;
     color: #eee;
-}
-.header .links a{
-    text-decoration: none;
-    transition: 0.3s;
-    color: white;
-}
-.header .links a:hover,
-.header .links a.active{
-    color: var(--main-color);
 }
 /* end landing page  */
 /* start about=us  */
@@ -183,7 +198,11 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-
+.info-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .about-us .info-box h2{
     font-weight: bold;
     font-size: 30px;
@@ -262,19 +281,23 @@ body{
     color: var(--main-color);
     font-size: 30px;
     font-weight: bold;
+    padding-bottom: 50px;
 }
 .gallary .container .images-box{
+    text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap:1rem;
 }
-.gallary .container .images-box .box{
+/* .gallary .container .images-box .box{
     border-radius: 10px;
     overflow: hidden;
-}
+} */
 .gallary .container .images-box .box img{
     width: 100%;
+    margin: 5px;
+    cursor: pointer;
 }
 /* end gallary  */

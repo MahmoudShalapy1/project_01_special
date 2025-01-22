@@ -7,9 +7,6 @@ document.querySelector(".gear").onclick = function () {
     document.querySelector(".settings-box").classList.toggle("open");
 };
 
-
-
-
 // Switch colors
 const colorsLi = document.querySelectorAll(".colors-list li");
 
@@ -49,8 +46,6 @@ colorsLi.forEach((li) => {
         e.target.classList.add("active");
     });
 });
-
-
 
 
 // Random background option
@@ -162,4 +157,25 @@ window.onscroll = function() {
             skill.style.width = skill.dataset.progress;
         });
     }; 
-}
+};
+// ceate popup with the imafes in the galalry section 
+let ourGallary = document.querySelectorAll(".gallary img");
+
+ourGallary.forEach(img => {
+
+    //creat overlay
+    let overlay = document.createElement("div");
+
+    // add class to overlay 
+    overlay.className = 'popup-overlay';
+
+    //Append overlay to body
+    document.body.appendChild(overlay);
+
+    // create the popup box 
+    let popupBox = document.createElement("div");
+
+    // add class to popupBox 
+    popupBox.className = 'popup-box';
+
+});
