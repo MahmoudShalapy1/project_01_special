@@ -445,3 +445,57 @@ body{
 
 }
 /* end timeline  */
+/* start features  */
+.features{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.features h2{
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.features .container .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: space-between;
+    gap: 5rem;
+    align-items: center;
+}
+.features .feat-box{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.features .feat-box img{
+    align-self: center;
+    border-radius: 50%;
+    width: 100px;
+}
+.features .feat-box h4{
+    font-size: 22px;
+    margin: 15px 0 40px;
+    position: relative;
+}
+.features .feat-box h4::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: var(--main-color);
+    bottom:  -25px;
+    left: 50%;
+    margin-left: -20px;
+}
+.features .feat-box p{
+    width: 80%;
+    color: #3e3e3e;
+    line-height: 1.6;
+    text-align: center;
+}
+/* start features  */
