@@ -159,23 +159,65 @@ window.onscroll = function() {
     }; 
 };
 // ceate popup with the imafes in the galalry section 
-let ourGallary = document.querySelectorAll(".gallary img");
+let ourGallery = document.querySelectorAll(".gallary img");
 
-ourGallary.forEach(img => {
+ourGallery.forEach(img => {
+    img.addEventListener('click', (e) => {
+        // Create overlay
+        let overlay = document.createElement("div");
 
-    //creat overlay
-    let overlay = document.createElement("div");
+        // Add class to overlay
+        overlay.className = 'popup-overlay';
 
-    // add class to overlay 
-    overlay.className = 'popup-overlay';
+        // Append overlay to body
+        document.body.appendChild(overlay);
 
-    //Append overlay to body
-    document.body.appendChild(overlay);
+        // Create the popup box
+        let popupBox = document.createElement("div");
 
-    // create the popup box 
-    let popupBox = document.createElement("div");
+        // Add class to popupBox
+        popupBox.className = 'popup-box';
 
-    // add class to popupBox 
-    popupBox.className = 'popup-box';
+        if(img.alt){
+            let imgHeading = document.createElement("h3");
 
+            let imgText = document.createTextNode(img.alt);
+
+            imgHeading.appendChild(imgText);
+
+            popupBox.appendChild(imgHeading);
+        }
+        // Create the image
+        let popupImage = document.createElement("img");
+
+        // Set image src
+        popupImage.src = img.src;
+
+        // Add image to popupBox
+        popupBox.appendChild(popupImage);
+
+        // Append popupBox to body
+        document.body.appendChild(popupBox);
+
+        // Add a close button to the popup
+        let closeButton = document.createElement("span");
+        closeButton.className = 'close-button';
+        closeButton.textContent = 'X';
+
+        // Append the close button to the popupBox
+        popupBox.appendChild(closeButton);
+
+        // Close popup on clicking the close button
+        closeButton.addEventListener('click', () => {
+            popupBox.remove();
+            overlay.remove();
+        });
+
+        // Close popup on clicking the overlay
+        overlay.addEventListener('click', () => {
+            popupBox.remove();
+            overlay.remove();
+        });
+
+    });
 });

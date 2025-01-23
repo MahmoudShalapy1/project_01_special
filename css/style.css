@@ -300,4 +300,49 @@ body{
     margin: 5px;
     cursor: pointer;
 }
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.popup-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+}
+
+.popup-box img {
+    max-width: 350px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer; 
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.popup-box h3{
+    top: 10px;
+    left: 10px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
 /* end gallary  */
