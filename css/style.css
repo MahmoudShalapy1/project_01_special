@@ -164,6 +164,57 @@ body{
     opacity: 1;
 }
 /* end setting box  */
+/* start vav-bullets  */
+.nav-bullets {
+    position: fixed;
+    width: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-bullets .bullet {
+    width: 20px;
+    height: 20px;
+    border: 3px var(--main-color) solid;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 10px auto;
+    position: relative;
+}
+
+.nav-bullets .bullet .tooltip {
+    background-color: var(--main-color);
+    font-weight: bold;
+    color: #fff;
+    width: 100px;
+    position: absolute;
+    right: 40px;
+    top: -6px;
+    padding: 4px 10px;
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-bullets .bullet:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-bullets .bullet .tooltip::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--main-color);
+    left: 100%;
+    top: 0;
+}
+/* end vav-bullets  */
 .introduction-text{
     position: absolute;
     top: 50%;
@@ -185,7 +236,7 @@ body{
     color: #eee;
 }
 /* end landing page  */
-/* start about=us  */
+/* start about-us  */
 .about-us{
     width: 100%;
     padding-top: 30px;
@@ -218,7 +269,7 @@ body{
 .about-us .image-box img{
     width: 300px;
 }
-/* end about=us  */
+/* end about-us  */
 /* start skills  */
 .skills{
     width: 100%;
