@@ -499,3 +499,89 @@ body{
     text-align: center;
 }
 /* start features  */
+/* start testimonials  */
+.testimonials{
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.testimonials::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: var(--main-color);
+    top: 0;
+    left: 0;
+}
+.testimonials::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #3e3e3e;
+    top: 0;
+    right: 0;
+}
+.testimonials h2{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 50px;
+    z-index: 3;
+}
+.testimonials .opinions{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    gap: 2rem;
+}
+.testimonials .opinions .box{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 3;
+}
+.testimonials .opinions .box .comment{
+    width: 100%;
+}
+.testimonials .opinions .box .comment p{
+    color: #3e3e3e;
+    line-height: 1.6;
+    font-style: italic;
+}
+.testimonials .opinions .box .guest{
+    display: flex;
+    width: 100%;
+    padding-top: 20px;
+}
+.testimonials .opinions .box .guest .guist-image{
+    width: 60px;
+}
+.testimonials .opinions .box .guest .guist-image img{
+    width: 100%;
+    border-radius: 50%;
+}
+.testimonials .opinions .box .guest .guest-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: auto;
+    padding-left: 20px;
+}
+.testimonials .opinions .box .guest .guest-name h3{
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+.testimonials .opinions .box .guest .guest-name p{
+    color: #3e3e3e;
+}
+/* end testimonials  */
