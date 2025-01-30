@@ -1,6 +1,6 @@
-/* :root{
+:root{
     --main-color: #17638f;
-} */
+} 
 *{
     padding: 0;
     margin: 0;
@@ -150,7 +150,7 @@ body{
     font-size: 20px;
     color: #666;
 }
-.settings-box .option-box .random-backgrounds span{
+.settings-box .option-box  span{
     background-color: var(--main-color);
     padding: 3px 15px;
     border-radius: 5px;
@@ -160,8 +160,21 @@ body{
     font-size: 12px;
     transition: 0.3s;
 }
-.settings-box .option-box .random-backgrounds span.active{
+.settings-box .option-box  span.active{
     opacity: 1;
+}
+.reset-options{
+    background-color: #f44336;
+    color: #fff;
+    font-weight: bold;
+    width: 180px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+    border: none;
 }
 /* end setting box  */
 /* start vav-bullets  */
@@ -188,7 +201,7 @@ body{
     background-color: var(--main-color);
     font-weight: bold;
     color: #fff;
-    width: 100px;
+    width: 110px;
     position: absolute;
     right: 40px;
     top: -6px;

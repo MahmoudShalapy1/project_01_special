@@ -37,16 +37,9 @@ colorsLi.forEach((li) => {
         // Save the selected color in localStorage
         localStorage.setItem("color_option", selectedColor);
 
-        // Remove active class from all items
-        colorsLi.forEach((element) => {
-            element.classList.remove("active");
-        });
-
-        // Add active class to the clicked item
-        e.target.classList.add("active");
+        handleActive(e);
     });
 });
-
 
 // Random background option
 let backgroundOption = true;
@@ -80,13 +73,7 @@ const randomBackLi = document.querySelectorAll(".random-backgrounds span");
 // Loop on all spans
 randomBackLi.forEach((span) => {
     span.addEventListener("click", (e) => {
-        // Remove active class from all spans
-        e.target.parentElement.querySelectorAll(".active").forEach((element) => {
-            element.classList.remove("active");
-        });
-
-        // Add active class to the clicked span
-        e.target.classList.add("active");
+        handleActive(e);
 
         // Handle background option
         if (e.target.dataset.background === "yes") {
@@ -119,19 +106,84 @@ function randomizeImgs() {
         backgroundInterval = setInterval(() => {
             // Get random number
             let randomNumber = Math.floor(Math.random() * imgsArray.length);
-
+            
             // Change background image URL
             landingPage.style.backgroundImage =
-                'url("images/' + imgsArray[randomNumber] + '")';
+            'url("images/' + imgsArray[randomNumber] + '")';
         }, 5000);
-    };
-};
+    }
+}
 
 // Start randomizing images if the option is true
 if (backgroundOption) {
     randomizeImgs();
 }
 
+const allBullets = document.querySelectorAll(".nav-bullets .bullet");
+const allLinks = document.querySelectorAll(".links a");
+
+function scrollToSomewhere(elements){
+    elements.forEach(ele => {
+        ele.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            document.querySelector(e.target.dataset.section).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+scrollToSomewhere(allBullets);
+scrollToSomewhere(allLinks);
+
+// Handle active status 
+function handleActive(ev) {
+    // Remove active class from all children 
+    ev.target.parentElement.querySelectorAll(".active").forEach(element => {
+        element.classList.remove("active");
+    });
+    ev.target.classList.add("active");
+}
+
+let bulletsSpan = document.querySelectorAll(".bullets-option span");
+let bulletsContainer = document.querySelector(".nav-bullets");
+let bulletLocalItem = localStorage.getItem("bullets-option");
+
+if(bulletLocalItem){
+    bulletsSpan.forEach(span => {
+        span.classList.remove("active");
+    });
+
+    if(bulletLocalItem === 'block'){
+        bulletsContainer.style.display = 'block';
+        document.querySelector(".bullets-option .yes").classList.add("active");
+    } else {
+        bulletsContainer.style.display = 'none';
+        document.querySelector(".bullets-option .no").classList.add("active");
+    }
+}
+
+bulletsSpan.forEach(span => {
+    span.addEventListener("click", (e) => {
+        if(span.dataset.display === 'show'){
+            bulletsContainer.style.display = 'block';
+            localStorage.setItem("bullets-option", 'block');
+        } else {
+            bulletsContainer.style.display = 'none';
+            localStorage.setItem("bullets-option", 'none');
+        }
+        handleActive(e);
+    });
+});
+
+// Reset button 
+document.querySelector(".reset-options").onclick = function() {
+    localStorage.removeItem("color_option");
+    localStorage.removeItem("background_option");
+    localStorage.removeItem("bullets-option"); // Fixed typo here
+    window.location.reload();
+}
 
 // select skills selector 
 let ourSkills = document.querySelector(".skills");
@@ -221,3 +273,4 @@ ourGallery.forEach(img => {
 
     });
 });
+
