@@ -273,4 +273,3 @@ ourGallery.forEach(img => {
 
     });
 });
-

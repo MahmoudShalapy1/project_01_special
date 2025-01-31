@@ -37,6 +37,7 @@ body{
     width: 300px;
     padding: 15px 0;
     font-weight: bold;
+    cursor: pointer;
 }
 .header .links{
     list-style: none;
@@ -53,10 +54,11 @@ body{
     text-decoration: none;
     transition: 0.3s;
     color: white;
+    cursor: pointer;
 }
 .header ul a:hover,
-.header .ul a.active{
-    color: var(--main-color);
+.header ul a.active{
+    color: var(--main-color) !important;
 }
 .offcanvas{
     background-color: #666;
