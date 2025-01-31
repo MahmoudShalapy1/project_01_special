@@ -500,12 +500,23 @@ body{
 .timeline .timeline-content .left .content::before{
     right: -20px;
     border-color: transparent transparent transparent #fff;
-
 }
 .timeline .timeline-content .right .content::before{
     left: -20px;
     border-color: transparent #fff transparent transparent ;
+}
 
+@media (max-width: 767px) {
+    
+    .timeline .timeline-content .left,
+    .timeline .timeline-content .right{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .timeline .timeline-content .left::before ,
+    .timeline .timeline-content .right::before{
+        display: none;
+    }
 }
 /* end timeline  */
 /* start features  */
