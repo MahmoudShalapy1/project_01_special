@@ -1,11 +1,37 @@
-// Toggle spin class on icon
-document.querySelector(".gear").onclick = function () {
+// // Toggle spin class on icon
+
+document.querySelector(".gear").onclick = function (e) {
+
     // Toggle class fa-spin for rotation on self
     this.classList.toggle("fa-spin");
 
     // Toggle settings box visibility
     document.querySelector(".settings-box").classList.toggle("open");
 };
+
+// Add a click event listener to the document
+document.addEventListener("click", function (e) {
+    const settingsBox = document.querySelector(".settings-box");
+    const gearIcon = document.querySelector(".gear");
+
+    // Check if the click is outside the settings box and gear icon
+    if (!settingsBox.contains(e.target) && !gearIcon.contains(e.target)) {
+        // Remove the open class from the settings box
+        settingsBox.classList.remove("open");
+
+        // Remove the fa-spin class from the gear icon
+        gearIcon.classList.remove("fa-spin");
+    }
+});
+
+// Handle active status 
+function handleActive(ev) {
+    // Remove active class from all children 
+    ev.target.parentElement.querySelectorAll(".active").forEach(element => {
+        element.classList.remove("active");
+    });
+    ev.target.classList.add("active");
+}
 
 // Switch colors
 const colorsLi = document.querySelectorAll(".colors-list li");
@@ -137,14 +163,6 @@ function scrollToSomewhere(elements){
 scrollToSomewhere(allBullets);
 scrollToSomewhere(allLinks);
 
-// Handle active status 
-function handleActive(ev) {
-    // Remove active class from all children 
-    ev.target.parentElement.querySelectorAll(".active").forEach(element => {
-        element.classList.remove("active");
-    });
-    ev.target.classList.add("active");
-}
 
 let bulletsSpan = document.querySelectorAll(".bullets-option span");
 let bulletsContainer = document.querySelector(".nav-bullets");
